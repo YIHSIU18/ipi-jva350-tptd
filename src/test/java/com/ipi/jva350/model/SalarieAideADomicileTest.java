@@ -1,15 +1,26 @@
 package com.ipi.jva350.model;
 
+import com.ipi.jva350.exception.SalarieException;
+import com.ipi.jva350.repository.SalarieAideADomicileRepository;
+import com.ipi.jva350.service.SalarieAideADomicileService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.mockito.ArgumentCaptor;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 
 import java.time.LocalDate;
 import java.util.LinkedHashSet;
 
 public class SalarieAideADomicileTest {
 
+    @InjectMocks
+    private SalarieAideADomicileService salarieService = new SalarieAideADomicileService();
+    @Mock
+    private SalarieAideADomicileRepository salarieAideADomicileRepository;
     //Tests unitaires simples
     @Test
     public void testALegalementDroitADesCongesPayesValue()
@@ -96,6 +107,29 @@ public class SalarieAideADomicileTest {
 
     //Utiliser Mocks sous Junit 5
     //Tests avec mocks
+    //mocké :
+    @Test
+    public void testAjouteConge() throws SalarieException
+    {
+        SalarieAideADomicileService salarieService;
+        // Given :
+        SalarieAideADomicile monSalarie = new SalarieAideADomicile("Toto",
+                LocalDate.of(2023,6,28),
+                LocalDate.now(),
+                20,
+                2.5,
+                200,
+                12,
+                8 );
+        salarieService.ajouteConge(monSalarie, LocalDate.of(2024,12,17),
+                LocalDate.of(2024,12,12));
+        //Then :
+        ArgumentCaptor<SalarieAideADomicile> salarieAideADomicileArgumentCaptor = ArgumentCaptor.forClass(SalarieAideADomicile.class);
+        Mockito.verify(salarieAideADomicileRepository, Mockito.times(1).save(salarieAideADomicileArgumentCaptor.capture()));
+        Assertions.assertEquals(salarieAideADomicileArgumentCaptor.getValue().getCongesPayesRestantAnneeNMoins1(), 1L);
+
+    }
+
 
 
 }

@@ -1,13 +1,10 @@
 package com.ipi.jva350.model;
 
 import com.ipi.jva350.repository.SalarieAideADomicileRepository;
-import com.ipi.jva350.service.SalarieAideADomicileService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -20,9 +17,6 @@ public class SalarieAideADomicileTest {
     @Autowired
     SalarieAideADomicileRepository salarieAideADomicileRepository;
 
-
-    @InjectMocks
-    private SalarieAideADomicileService salarieAideADomicileService;
 
     //Tests unitaires simples
     @Test

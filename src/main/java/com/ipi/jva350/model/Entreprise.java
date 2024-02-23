@@ -1,6 +1,5 @@
 package com.ipi.jva350.model;
 
-import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.*;
 

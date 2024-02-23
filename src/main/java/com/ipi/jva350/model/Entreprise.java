@@ -1,5 +1,6 @@
 package com.ipi.jva350.model;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -7,7 +8,7 @@ public final class Entreprise {
 
     private static final Map<Integer, LocalDate> datePaque = new HashMap<>();
 
-    private Entreprise() {
+    public Entreprise() {
 
     }
 
@@ -147,8 +148,17 @@ public final class Entreprise {
      * @return
      */
     public static boolean estDansPlage(LocalDate d, LocalDate debut, LocalDate fin) {
-        // à implémenter en TDD !
-        throw new RuntimeException("à implémenter en TDD !");
+        Date dD = new Date(d.getYear() - 1900, d.getMonthValue(),d.getDayOfMonth());
+        Date debutD = new Date(debut.getYear() - 1900, debut.getMonthValue(),debut.getDayOfMonth());
+        Date finD = new Date(fin.getYear() - 1900, fin.getMonthValue(),fin.getDayOfMonth());
+
+        if((dD.getTime() > debutD.getTime()) && (dD.getTime() < finD.getTime()))
+        {
+            return true;
+        }
+
+        return false;
     }
+
 
 }

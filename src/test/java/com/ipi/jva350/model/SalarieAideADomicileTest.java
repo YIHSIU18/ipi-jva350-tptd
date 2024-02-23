@@ -1,26 +1,29 @@
 package com.ipi.jva350.model;
 
-import com.ipi.jva350.exception.SalarieException;
 import com.ipi.jva350.repository.SalarieAideADomicileRepository;
 import com.ipi.jva350.service.SalarieAideADomicileService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
 import java.util.LinkedHashSet;
-
+@SpringBootTest
 public class SalarieAideADomicileTest {
 
+
+    @Autowired
+    SalarieAideADomicileRepository salarieAideADomicileRepository;
+
+
     @InjectMocks
-    private SalarieAideADomicileService salarieService = new SalarieAideADomicileService();
-    @Mock
-    private SalarieAideADomicileRepository salarieAideADomicileRepository;
+    private SalarieAideADomicileService salarieAideADomicileService;
+
     //Tests unitaires simples
     @Test
     public void testALegalementDroitADesCongesPayesValue()
@@ -105,30 +108,27 @@ public class SalarieAideADomicileTest {
         Assertions.assertEquals(expectedNb, resNb.size());
     }
 
-    //Utiliser Mocks sous Junit 5
-    //Tests avec mocks
-    //mocké :
+    //Tests de repository
     @Test
-    public void testAjouteConge() throws SalarieException
+    public void testPartCongesPrisTotauxAnneeNMoins1()
     {
-        SalarieAideADomicileService salarieService;
         // Given :
         SalarieAideADomicile monSalarie = new SalarieAideADomicile("Toto",
                 LocalDate.of(2023,6,28),
                 LocalDate.now(),
                 20,
                 2.5,
-                200,
-                12,
+                30,
+                10,
                 8 );
-        salarieService.ajouteConge(monSalarie, LocalDate.of(2024,12,17),
-                LocalDate.of(2024,12,12));
+        salarieAideADomicileRepository.save(monSalarie);
+        //When :
+        Double res = salarieAideADomicileRepository.partCongesPrisTotauxAnneeNMoins1();
         //Then :
-        ArgumentCaptor<SalarieAideADomicile> salarieAideADomicileArgumentCaptor = ArgumentCaptor.forClass(SalarieAideADomicile.class);
-        Mockito.verify(salarieAideADomicileRepository, Mockito.times(1).save(salarieAideADomicileArgumentCaptor.capture()));
-        Assertions.assertEquals(salarieAideADomicileArgumentCaptor.getValue().getCongesPayesRestantAnneeNMoins1(), 1L);
-
+        Assertions.assertEquals(0.8, res);
     }
+
+
 
 
 

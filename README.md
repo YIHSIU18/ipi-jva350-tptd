@@ -56,8 +56,7 @@ https://git-scm.com/download/win ). Quelques liens :
 
 Le premier rapport Sonar indique...
 
-
-### Tests unitaires
+### Tests unitaires (TODO)
 
 Dans tous les cas :
 - créez la classe de test si nécessaire, et une ou plusieurs méthodes de test
@@ -74,7 +73,7 @@ Aide : pour lire une date depuis du texte, utiliser LocalDate.parse(<date au for
 Pour information, cette méthode suit les spécifications métier exprimées à https://femme-de-menage.ooreka.fr/comprendre/conges-payes-femme-de-menage
 et notamment clarifiées dans les Exemples 1 et 2 visibles en cliquant sur "Congés payés femme de ménage : décompte des jours"
 puis en regardant le tableau sous "Vacances" (et non "Absences").
-- Tests avec mocks : Testez de manière mockée (sans dépendance à la base de données) la méthode `SalarieAideADomicileService.ajouteConge()`.
+- Tests avec mocks (TODO) : Testez de manière mockée (sans dépendance à la base de données) la méthode `SalarieAideADomicileService.ajouteConge()`.
 Elle fait plusieurs choses et il y a donc plusieurs choses à tester.
 
 ### Tests d'intégration
@@ -153,32 +152,32 @@ l'envoie (git commit ; git push)
 NB. il y a encore nombre d'autres solutions : le binôme dont le projet n'a pas été choisi forke le projet choisi puis
 fait des pull request dans le projet choisi, ou rajoute la remote du projet choisi dans le sien...
 
-### TDD
+### TDD (OK)
 
 - Faites du TDD pour tester unitairement la méthode `Entreprise.estDansPlage()` : écrire d'abord les tests entièrement
 (pensez aux cas limites) et seulement ensuite écrivez le code de la méthode. Indiquez dans un commentaire une chose ou
 deux que vous auriez peut-être fait différemment sans faire de TDD.
 
-### Tests unitaires
+### Tests unitaires (OK)
 
 - Tester unitairement (de manière paramétrée) la méthode `Entreprise.estJourFerie()` OU BIEN
 `Entreprise.proportionPondereeDuMois()` et `Entreprise.getPremierJourAnneeDeConges()`. **Attention**, elles contiennent
 des erreurs, bon débogage ! Améliorez l'ensemble de la qualité de cette méthode, avec l'aide de Sonar.
 - Testez sans dépendance à la base de données la méthode `SalarieAideADomicileService.calculeLimiteEntrepriseCongesPermis()`
 
-### Tests d'intégration
+### Tests d'intégration(TODO)
 
 - Tests de repository : Testez la méthode `SalarieAideADomicileRepository.partCongesPrisTotauxAnneeNMoins1()`
 - Tests d'intégration de service : Créez un test d'intégration d'un exemple d'usage typique de la méthode `SalarieAideADomicileService.calculeLimiteEntrepriseCongesPermis()`
 - BONUS Ecrire un test d'acceptation Cucumber pour au moins la partie "ancienneté" la fonctionnalité de calcul
 de limite de congés permis par l'entreprise.
 
-### Maintenabilité
+### Maintenabilité (TODO)
 
-- conventions de codage : pareil, faites les respecter, améliorez la lisibilité du code
+- conventions de codage (TODO) : pareil, faites les respecter, améliorez la lisibilité du code
 - journalisation : Changez la configuration pour réaliser la rotation des fichiers de logs tous les jours et que chaque
 fichier ne dépasse pas 1 MO.
 - BONUS : Créez une petite documentation statique en utilisant MkDocs.
-- Rédigez **ci-dessous** une courte analyse du rapport produit par Sonar (métriques, évolution, état général...) :
+- (TODO)Rédigez **ci-dessous** une courte analyse du rapport produit par Sonar (métriques, évolution, état général...) :
 
 Le rapport Sonar final indique...

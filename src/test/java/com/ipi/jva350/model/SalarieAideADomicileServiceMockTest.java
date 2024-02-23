@@ -23,7 +23,6 @@ public class SalarieAideADomicileServiceMockTest {
     @InjectMocks
     private SalarieAideADomicileService salarieService;
 
-
     // mocké :
     @Test
     public void testAjouteConge() throws SalarieException {

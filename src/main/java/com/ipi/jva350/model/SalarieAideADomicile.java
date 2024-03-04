@@ -11,8 +11,7 @@ import java.util.Objects;
 @Entity
 public class SalarieAideADomicile {
 
-    public static float CONGES_PAYES_ACQUIS_PAR_MOIS = 2.5f;
-
+    public static float CongesPayesAcquisParMois = 2.5f;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

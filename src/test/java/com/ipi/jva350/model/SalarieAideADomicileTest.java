@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.time.LocalDate;
 import java.util.LinkedHashSet;
 @SpringBootTest
-public class SalarieAideADomicileTest {
+class SalarieAideADomicileTest {
 
 
     @Autowired
@@ -20,7 +20,7 @@ public class SalarieAideADomicileTest {
 
     //Tests unitaires simples
     @Test
-    public void testALegalementDroitADesCongesPayesValue()
+    void testALegalementDroitADesCongesPayesValue()
     {
         // Given :
         SalarieAideADomicile monSalarie = new SalarieAideADomicile("Toto",
@@ -38,7 +38,7 @@ public class SalarieAideADomicileTest {
 
     }
     @Test
-    public void testALegalementDroitADesCongesPayesTrue()
+    void testALegalementDroitADesCongesPayesTrue()
     {
         // Given :
         SalarieAideADomicile monSalarie = new SalarieAideADomicile("Toto",
@@ -57,7 +57,7 @@ public class SalarieAideADomicileTest {
     }
 
     @Test
-    public void testALegalementDroitADesCongesPayesFalse()
+    void testALegalementDroitADesCongesPayesFalse()
     {
         // Given :
         SalarieAideADomicile monSalarie = new SalarieAideADomicile("Toto",
@@ -104,7 +104,7 @@ public class SalarieAideADomicileTest {
 
     //Tests de repository
     @Test
-    public void testPartCongesPrisTotauxAnneeNMoins1()
+    void testPartCongesPrisTotauxAnneeNMoins1()
     {
         // Given :
         SalarieAideADomicile monSalarie = new SalarieAideADomicile("Toto",

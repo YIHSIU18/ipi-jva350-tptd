@@ -8,9 +8,9 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.util.List;
 
-public class EntrepriseTest {
+ class EntrepriseTest {
     @Test
-    public void testEstDansPlage() {
+     void testEstDansPlage() {
 
         Entreprise ep = new Entreprise();
         // Given :
@@ -25,7 +25,7 @@ public class EntrepriseTest {
 
     //Entreprise.estJourFerie()
     @Test
-    public void testEstJourFerie()
+     void testEstJourFerie()
     {
         Entreprise ep = new Entreprise();
         //Given :

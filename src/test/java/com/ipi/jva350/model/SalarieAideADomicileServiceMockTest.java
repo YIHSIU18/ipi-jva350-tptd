@@ -16,7 +16,7 @@ import java.time.LocalDate;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class SalarieAideADomicileServiceMockTest {
+class SalarieAideADomicileServiceMockTest {
 
     @Mock
     private SalarieAideADomicileRepository salarieAideADomicileRepository;
@@ -25,7 +25,7 @@ public class SalarieAideADomicileServiceMockTest {
 
     // mocké :
     @Test
-    public void testAjouteConge() throws SalarieException {
+    void testAjouteConge() throws SalarieException {
         // Given :
         SalarieAideADomicile monSalarie = new SalarieAideADomicile("Paul",
                 LocalDate.of(2022, 6, 28), LocalDate.of(2023, 11, 1),
@@ -42,7 +42,7 @@ public class SalarieAideADomicileServiceMockTest {
 
     //Tests d'intégration de service
     @Test
-    public void testCalculeLimiteEntrepriseCongesPermis() {
+    void testCalculeLimiteEntrepriseCongesPermis() {
 
         //Given :
         LocalDate moisEnCours = LocalDate.of(2024, 3, 23);

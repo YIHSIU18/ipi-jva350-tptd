@@ -120,6 +120,7 @@ public final class Entreprise {
                 : LocalDate.of(d.getYear() - 1, 6, 1);
     }
 
+
     public static boolean estJourFerie(LocalDate jour) {
         int monEntier = (int) Entreprise.joursFeries(jour).stream().filter(d ->
                 d.equals(jour)).count();

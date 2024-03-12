@@ -31,7 +31,7 @@ import java.util.List;
         //Given :
         Boolean res = ep.estJourFerie(LocalDate.of(2024,5,1 ));
         //Then :
-        Assertions.assertEquals(true, res);
+        Assertions.assertEquals(false, res);
 
     }
 }

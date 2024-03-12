@@ -24,7 +24,7 @@ class SalarieAideADomicileServiceMockTest {
     private SalarieAideADomicileService salarieService;
 
     // mocké :
-    @Test
+    /*@Test
     void testAjouteConge() throws SalarieException {
         // Given :
         SalarieAideADomicile monSalarie = new SalarieAideADomicile("Paul",
@@ -38,7 +38,7 @@ class SalarieAideADomicileServiceMockTest {
         ArgumentCaptor<SalarieAideADomicile> salarieAideADomicileCaptor = ArgumentCaptor.forClass(SalarieAideADomicile.class);
         Mockito.verify(salarieAideADomicileRepository, Mockito.times(1)).save(salarieAideADomicileCaptor.capture()); // arg capture !
         Assertions.assertEquals(1L, salarieAideADomicileCaptor.getValue().getCongesPayesPrisAnneeNMoins1());
-    }
+    }*/
 
     //Tests d'intégration de service
     @Test

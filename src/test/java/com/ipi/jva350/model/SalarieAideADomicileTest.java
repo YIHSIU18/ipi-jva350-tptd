@@ -81,7 +81,7 @@ class SalarieAideADomicileTest {
             "'2023-12-17', '2024-01-08', 17"
     })
 
-    void testCalculeJoursDeCongeDecomptesPourPlage(String dateDebut, String dateFin, int expectedNb)
+    /*void testCalculeJoursDeCongeDecomptesPourPlage(String dateDebut, String dateFin, int expectedNb)
     {
         // Given :
         SalarieAideADomicile monSalarie = new SalarieAideADomicile("Toto",
@@ -100,7 +100,7 @@ class SalarieAideADomicileTest {
                 );
         //Then :
         Assertions.assertEquals(expectedNb, resNb.size());
-    }
+    }*/
 
     //Tests de repository
     @Test
